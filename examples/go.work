@@ -1,0 +1,4 @@
+cd /Users/sridharvenkat/Documents/oapi-codegen/examples
+go work init
+go work use ./tools/ ./tools/gopls/
+

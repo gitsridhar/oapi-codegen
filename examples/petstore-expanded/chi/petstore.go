@@ -18,6 +18,7 @@ import (
 )
 
 func main() {
+	host := flag.String("host", "0.0.0.0", "Host for the test HTTP server")
 	port := flag.String("port", "8080", "Port for test HTTP server")
 	flag.Parse()
 
@@ -46,7 +47,7 @@ func main() {
 
 	s := &http.Server{
 		Handler: r,
-		Addr:    net.JoinHostPort("0.0.0.0", *port),
+		Addr:    net.JoinHostPort(*host, *port),
 	}
 
 	// And we serve HTTP until the world ends.
